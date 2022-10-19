@@ -8,9 +8,9 @@ import {
 import { body, validationResult } from "express-validator";
 import { pool } from "../config/db.js";
 
-const routerAdviser = express.Router();
+const routerCity = express.Router();
 
-routerAdviser.get("/get-adviser", async (req, res) => {
+routerCity.get("/get-city", async (req, res) => {
   const resultErrors = validationResult(req).formatWith(errorFormatter);
   if (!resultErrors.isEmpty()) {
     const errorResponse = formatErrorValidator(resultErrors);
@@ -20,13 +20,13 @@ routerAdviser.get("/get-adviser", async (req, res) => {
   const dbConnection = await pool.awaitGetConnection();
 
   try {
-    const response = await dbConnection.awaitQuery(`SELECT * FROM asesor`, []);
+    const response = await dbConnection.awaitQuery(`SELECT * FROM ciudad`, []);
 
     if (!response[0]) {
       dbConnection.release();
       return res
         .status(422)
-        .json(formatResponse({}, `No se encontró asesores registrados`));
+        .json(formatResponse({}, `No se encontró ciudades registrados`));
     }
 
     dbConnection.release();
@@ -34,7 +34,7 @@ routerAdviser.get("/get-adviser", async (req, res) => {
     return res.status(201).json(
       formatResponse(
         {
-          txt: `Numero de asesores encontrados ${response.length}`,
+          txt: `Numero de ciudades encontrados ${response.length}`,
           response,
         },
         ""
@@ -48,22 +48,9 @@ routerAdviser.get("/get-adviser", async (req, res) => {
   }
 });
 
-routerAdviser.post(
-  "/add-adviser",
-  [
-    body("name").notEmpty().withMessage("El nombre es un campo obligatorio"),
-    body("surname")
-      .notEmpty()
-      .withMessage("El apellido es un campo obligatorio"),
-    body("address")
-      .notEmpty()
-      .withMessage("La direccion es un campo obligatorio"),
-    body("phone")
-      .notEmpty()
-      .withMessage("El numero de celular es un campo obligatorio"),
-    body("email").isEmail().withMessage("Por favor ingrese un correo valido"),
-    body("salary").isNumeric().withMessage("Por favor ingrese un valor valido"),
-  ],
+routerCity.post(
+  "/add-city",
+  [body("nombre").notEmpty().withMessage("El nombre es un campo obligatorio")],
   async (req, res) => {
     const resultErrors = validationResult(req).formatWith(errorFormatter);
     if (!resultErrors.isEmpty()) {
@@ -74,24 +61,24 @@ routerAdviser.post(
     const dbConnection = await pool.awaitGetConnection();
 
     try {
-      const { name, surname, address, phone, email, salary } = req.body;
+      const { nombre } = req.body;
 
-      await dbConnection.awaitQuery(
-        `INSERT INTO asesor (nombres, apellidos, direccion, telefono, correo, salario) VALUES (?, ?, ?, ?, ?, ?)`,
-        [name, surname, address, phone, email, salary]
-      );
+      await dbConnection.awaitQuery(`INSERT INTO ciudad (nombre) VALUES (?)`, [
+        nombre,
+      ]);
 
       dbConnection.release();
 
       return res.status(201).json(
         formatResponse(
           {
-            message: "Asesor registrado con exito",
+            message: "ciudad registrado con exito",
           },
           ""
         )
       );
     } catch (error) {
+      console.log(error);
       dbConnection.release();
       console.log(error);
       const errorFormated = formatErrorResponse(error);
@@ -100,22 +87,9 @@ routerAdviser.post(
   }
 );
 
-routerAdviser.put(
-  "/update-adviser/:id",
-  [
-    body("name").notEmpty().withMessage("El nombre es un campo obligatorio"),
-    body("surname")
-      .notEmpty()
-      .withMessage("El apellido es un campo obligatorio"),
-    body("address")
-      .notEmpty()
-      .withMessage("La direccion es un campo obligatorio"),
-    body("phone")
-      .notEmpty()
-      .withMessage("El numero de celular es un campo obligatorio"),
-    body("email").isEmail().withMessage("Por favor ingrese un correo valido"),
-    body("salary").isNumeric().withMessage("Por favor ingrese un valor valido"),
-  ],
+routerCity.put(
+  "/update-city/:id",
+  [body("nombre").notEmpty().withMessage("El nombre es un campo obligatorio")],
   async (req, res) => {
     const resultErrors = validationResult(req).formatWith(errorFormatter);
     if (!resultErrors.isEmpty()) {
@@ -126,42 +100,43 @@ routerAdviser.put(
     const dbConnection = await pool.awaitGetConnection();
 
     try {
-      const { name, surname, address, phone, email, salary } = req.body;
+      const { nombre } = req.body;
       const { id } = req.params;
 
-      const existAsesor = await dbConnection.awaitQuery(
-        `SELECT * FROM asesor WHERE id= ? `,
+      const existCiudad = await dbConnection.awaitQuery(
+        `SELECT * FROM ciudad WHERE id= ? `,
         [id]
       );
 
-      if (!existAsesor[0]) {
+      if (!existCiudad[0]) {
         dbConnection.release();
         return res
           .status(422)
           .json(
             formatResponse(
               {},
-              `No se encontró asesor registrado con el ID : ${id}`
+              `No se encontró una Ciudad registrado con el ID : ${id}`
             )
           );
       }
 
-      await dbConnection.awaitQuery(
-        `UPDATE asesor SET nombres= ?, apellidos= ?, direccion= ?, telefono= ?, correo= ?, salario= ?  WHERE id= ?`,
-        [name, surname, address, phone, email, salary, id]
-      );
+      await dbConnection.awaitQuery(`UPDATE ciudad SET nombre= ? WHERE id= ?`, [
+        nombre,
+        id,
+      ]);
 
       dbConnection.release();
 
       return res.status(201).json(
         formatResponse(
           {
-            message: "Asesor actualizado con exito",
+            message: "Ciudad actualizado con exito",
           },
           ""
         )
       );
     } catch (error) {
+      console.log(error);
       dbConnection.release();
       console.log(error);
       const errorFormated = formatErrorResponse(error);
@@ -170,7 +145,7 @@ routerAdviser.put(
   }
 );
 
-routerAdviser.get("/search-adviser/:id", async (req, res) => {
+routerCity.delete("/delete-city/:id", async (req, res) => {
   const resultErrors = validationResult(req).formatWith(errorFormatter);
   if (!resultErrors.isEmpty()) {
     const errorResponse = formatErrorValidator(resultErrors);
@@ -182,72 +157,25 @@ routerAdviser.get("/search-adviser/:id", async (req, res) => {
   try {
     const { id } = req.params;
 
-    const existAsesor = await dbConnection.awaitQuery(
-      `SELECT * FROM asesor WHERE id= ? `,
+    const existPagos = await dbConnection.awaitQuery(
+      `SELECT * FROM ciudad WHERE id= ? `,
       [id]
     );
 
-    if (!existAsesor[0]) {
+    if (!existPagos[0]) {
       dbConnection.release();
       return res
         .status(422)
         .json(
           formatResponse(
             {},
-            `No se encontró Asesor registrado con el ID : ${id}`
-          )
-        );
-    }
-
-    dbConnection.release();
-
-    return res.status(201).json(
-      formatResponse(
-        {
-          existAsesor,
-        },
-        ""
-      )
-    );
-  } catch (error) {
-    dbConnection.release();
-    console.log(error);
-    const errorFormated = formatErrorResponse(error);
-    return res.status(500).json(errorFormated);
-  }
-});
-
-routerAdviser.delete("/delete-adviser/:id", async (req, res) => {
-  const resultErrors = validationResult(req).formatWith(errorFormatter);
-  if (!resultErrors.isEmpty()) {
-    const errorResponse = formatErrorValidator(resultErrors);
-    return res.status(422).json(formatResponse({}, errorResponse));
-  }
-
-  const dbConnection = await pool.awaitGetConnection();
-
-  try {
-    const { id } = req.params;
-
-    const existAsesor = await dbConnection.awaitQuery(
-      `SELECT * FROM asesor WHERE id= ? `,
-      [id]
-    );
-
-    if (!existAsesor[0]) {
-      dbConnection.release();
-      return res
-        .status(422)
-        .json(
-          formatResponse(
-            {},
-            `No se encontró Asesor registrado con el ID : ${id}`
+            `No se encontró Ciudad registrado con el ID : ${id}`
           )
         );
     }
 
     const existRelations = await dbConnection.awaitQuery(
-      `SELECT * FROM factura WHERE asesor_id= ? `,
+      `SELECT * FROM detalle WHERE ciudad_id= ? `,
       [id]
     );
 
@@ -258,19 +186,19 @@ routerAdviser.delete("/delete-adviser/:id", async (req, res) => {
         .json(
           formatResponse(
             {},
-            `El asesor  registrado con el ID : ${id} no se puede eliminar ya que esta relacionado con la tabla factura`
+            `La ciudad registrado con el ID : ${id} no se puede eliminar ya que esta registrada con la `
           )
         );
     }
 
-    await dbConnection.awaitQuery(`DELETE FROM asesor WHERE id= ?`, [id]);
+    await dbConnection.awaitQuery(`DELETE FROM ciudad WHERE id= ?`, [id]);
 
     dbConnection.release();
 
     return res.status(201).json(
       formatResponse(
         {
-          message: "Asesor eliminado con exito",
+          message: "ciudad eliminado con exito",
         },
         ""
       )
@@ -283,4 +211,44 @@ routerAdviser.delete("/delete-adviser/:id", async (req, res) => {
   }
 });
 
-export default routerAdviser;
+routerCity.get("/search-city/:id", async (req, res) => {
+  const resultErrors = validationResult(req).formatWith(errorFormatter);
+  if (!resultErrors.isEmpty()) {
+    const errorResponse = formatErrorValidator(resultErrors);
+    return res.status(422).json(formatResponse({}, errorResponse));
+  }
+
+  const dbConnection = await pool.awaitGetConnection();
+
+  try {
+    const { id } = req.params;
+
+    const ciudad = await dbConnection.awaitQuery(
+      `SELECT * FROM ciudad WHERE id= ? `,
+      [id]
+    );
+
+    if (!ciudad[0]) {
+      dbConnection.release();
+      return res
+        .status(422)
+        .json(
+          formatResponse(
+            {},
+            `No se encontró Ciudad registrado con el ID : ${id}`
+          )
+        );
+    }
+
+    dbConnection.release();
+
+    return res.status(201).json(formatResponse({ ciudad }, ""));
+  } catch (error) {
+    dbConnection.release();
+    console.log(error);
+    const errorFormated = formatErrorResponse(error);
+    return res.status(500).json(errorFormated);
+  }
+});
+
+export default routerCity;

@@ -474,3 +474,801 @@
 18:02:27.486 INFO  Server is running on port: 3006 
 18:02:32.289 INFO  Server is running on port: 3006 
 18:02:34.669 INFO  Server is running on port: 3006 
+18:54:24.717 INFO  Server is running on port: 3006 
+18:55:36.704 INFO  Server is running on port: 3006 
+18:56:09.809 INFO  Server is running on port: 3006 
+18:56:13.573 INFO  Connection %d connected24 
+18:56:13.573 INFO  Connection %d acquired24 
+18:56:13.598 INFO  Connection %d released24 
+18:57:50.295 INFO  Server is running on port: 3006 
+19:04:06.190 INFO  Server is running on port: 3006 
+19:16:00.478 INFO  Connection %d connected25 
+19:16:00.478 INFO  Connection %d acquired25 
+19:16:00.526 INFO  Connection %d released25 
+19:18:00.825 INFO  Connection %d acquired25 
+19:18:00.827 INFO  Connection %d released25 
+19:18:08.414 INFO  Connection %d acquired25 
+19:18:08.470 INFO  Connection %d released25 
+19:18:18.218 INFO  Connection %d acquired25 
+19:18:18.219 INFO  Connection %d released25 
+19:18:23.140 INFO  Connection %d acquired25 
+19:18:23.141 INFO  Connection %d released25 
+19:18:43.157 INFO  Connection %d acquired25 
+19:18:43.193 INFO  Connection %d released25 
+19:19:26.830 INFO  Connection %d acquired25 
+19:19:26.883 INFO  Connection %d released25 
+19:19:48.967 INFO  Connection %d acquired25 
+19:19:48.968 INFO  Connection %d released25 
+19:20:12.506 INFO  Connection %d acquired25 
+19:20:12.508 INFO  Connection %d released25 
+19:23:01.228 INFO  Connection %d acquired25 
+19:23:01.230 INFO  Connection %d released25 
+19:40:11.455 INFO  Connection %d acquired25 
+19:40:11.457 INFO  Connection %d released25 
+19:41:37.054 INFO  Connection %d acquired25 
+19:41:37.111 INFO  Connection %d released25 
+19:42:52.407 INFO  Connection %d acquired25 
+19:42:52.408 INFO  Connection %d released25 
+19:43:27.278 INFO  Connection %d acquired25 
+19:43:27.348 INFO  Connection %d released25 
+20:07:11.371 INFO  Connection %d acquired25 
+20:07:11.375 INFO  Connection %d released25 
+20:07:13.861 INFO  Connection %d acquired25 
+20:07:13.862 INFO  Connection %d released25 
+20:07:14.734 INFO  Connection %d acquired25 
+20:07:14.737 INFO  Connection %d released25 
+20:07:22.640 INFO  Server is running on port: 3006 
+20:07:36.268 INFO  Connection %d connected31 
+20:07:36.268 INFO  Connection %d acquired31 
+20:07:36.272 INFO  Connection %d released31 
+20:07:36.827 INFO  Connection %d acquired31 
+20:07:36.830 INFO  Connection %d released31 
+20:07:49.407 INFO  Connection %d acquired31 
+20:07:49.411 INFO  Connection %d released31 
+20:08:45.520 INFO  Connection %d acquired31 
+20:08:45.523 INFO  Connection %d released31 
+20:09:04.487 INFO  Connection %d acquired31 
+20:09:04.490 INFO  Connection %d released31 
+20:09:41.665 INFO  Connection %d acquired31 
+20:09:41.667 INFO  Connection %d released31 
+20:10:03.014 INFO  Connection %d acquired31 
+20:10:03.016 INFO  Connection %d released31 
+20:10:05.656 INFO  Connection %d acquired31 
+20:10:05.658 INFO  Connection %d released31 
+20:10:17.603 INFO  Connection %d acquired31 
+20:10:17.605 INFO  Connection %d released31 
+20:10:22.330 INFO  Connection %d acquired31 
+20:10:22.332 INFO  Connection %d released31 
+20:10:32.783 INFO  Connection %d acquired31 
+20:10:32.785 INFO  Connection %d released31 
+20:10:41.445 INFO  Connection %d acquired31 
+20:10:41.446 INFO  Connection %d released31 
+20:11:35.200 INFO  Connection %d acquired31 
+20:11:35.201 INFO  Connection %d released31 
+20:12:21.741 INFO  Connection %d acquired31 
+20:12:21.743 INFO  Connection %d released31 
+20:12:25.273 INFO  Connection %d acquired31 
+20:12:25.274 INFO  Connection %d released31 
+20:12:59.951 INFO  Connection %d acquired31 
+20:12:59.953 INFO  Connection %d released31 
+20:13:03.493 INFO  Connection %d acquired31 
+20:13:03.494 INFO  Connection %d released31 
+20:13:51.700 INFO  Connection %d acquired31 
+20:13:51.702 INFO  Connection %d released31 
+20:14:07.769 INFO  Connection %d acquired31 
+20:14:07.771 INFO  Connection %d released31 
+20:14:18.584 INFO  Connection %d acquired31 
+20:14:18.586 INFO  Connection %d released31 
+20:14:32.203 INFO  Connection %d acquired31 
+20:14:32.206 INFO  Connection %d released31 
+20:14:35.257 INFO  Connection %d acquired31 
+20:14:35.258 INFO  Connection %d released31 
+20:14:37.004 INFO  Connection %d acquired31 
+20:14:37.006 INFO  Connection %d released31 
+20:14:40.708 INFO  Connection %d acquired31 
+20:14:40.710 INFO  Connection %d released31 
+20:14:52.934 INFO  Connection %d acquired31 
+20:14:52.936 INFO  Connection %d released31 
+20:15:14.549 INFO  Connection %d acquired31 
+20:15:14.551 INFO  Connection %d released31 
+20:15:40.661 INFO  Connection %d acquired31 
+20:15:40.662 INFO  Connection %d released31 
+20:15:44.805 INFO  Connection %d acquired31 
+20:15:44.806 INFO  Connection %d released31 
+20:15:59.679 INFO  Connection %d acquired31 
+20:15:59.680 INFO  Connection %d released31 
+20:16:04.454 INFO  Connection %d acquired31 
+20:16:04.455 INFO  Connection %d released31 
+20:17:12.866 INFO  Connection %d acquired31 
+20:17:12.869 INFO  Connection %d released31 
+20:17:53.076 INFO  Connection %d acquired31 
+20:17:53.077 INFO  Connection %d released31 
+20:17:59.055 INFO  Connection %d acquired31 
+20:17:59.056 INFO  Connection %d released31 
+20:18:14.230 INFO  Connection %d acquired31 
+20:18:14.231 INFO  Connection %d released31 
+20:18:20.464 INFO  Connection %d acquired31 
+20:18:20.466 INFO  Connection %d released31 
+20:18:30.006 INFO  Connection %d acquired31 
+20:18:30.008 INFO  Connection %d released31 
+20:18:35.339 INFO  Connection %d acquired31 
+20:18:35.340 INFO  Connection %d released31 
+20:18:51.668 INFO  Connection %d acquired31 
+20:18:51.669 INFO  Connection %d released31 
+20:18:58.675 INFO  Connection %d acquired31 
+20:18:58.677 INFO  Connection %d released31 
+20:19:04.441 INFO  Connection %d acquired31 
+20:19:04.442 INFO  Connection %d released31 
+20:20:14.817 INFO  Connection %d acquired31 
+20:20:14.818 INFO  Connection %d released31 
+20:20:16.731 INFO  Connection %d acquired31 
+20:20:16.731 INFO  Connection %d released31 
+20:20:27.465 INFO  Connection %d acquired31 
+20:20:27.466 INFO  Connection %d released31 
+20:20:29.573 INFO  Connection %d acquired31 
+20:20:29.575 INFO  Connection %d released31 
+20:20:44.092 INFO  Connection %d acquired31 
+20:20:44.094 INFO  Connection %d released31 
+20:21:55.570 INFO  Connection %d acquired31 
+20:21:55.571 INFO  Connection %d released31 
+20:22:02.235 INFO  Connection %d acquired31 
+20:22:02.237 INFO  Connection %d released31 
+20:22:19.615 INFO  Connection %d acquired31 
+20:22:19.616 INFO  Connection %d released31 
+20:22:25.556 INFO  Connection %d acquired31 
+20:22:25.558 INFO  Connection %d released31 
+20:22:27.785 INFO  Connection %d acquired31 
+20:22:27.787 INFO  Connection %d released31 
+20:22:30.277 INFO  Connection %d acquired31 
+20:22:30.278 INFO  Connection %d released31 
+20:23:27.090 INFO  Connection %d acquired31 
+20:23:27.091 INFO  Connection %d released31 
+20:23:27.850 INFO  Connection %d acquired31 
+20:23:27.852 INFO  Connection %d released31 
+20:25:25.770 INFO  Connection %d acquired31 
+20:25:25.772 INFO  Connection %d released31 
+20:25:35.013 INFO  Connection %d acquired31 
+20:25:35.015 INFO  Connection %d released31 
+20:26:39.167 INFO  Connection %d acquired31 
+20:26:39.168 INFO  Connection %d released31 
+18:43:06.331 INFO  Server is running on port: 3006 
+18:48:48.874 INFO  Server is running on port: 3006 
+18:48:58.018 INFO  Server is running on port: 3006 
+18:49:02.893 INFO  Server is running on port: 3006 
+18:49:19.966 INFO  Server is running on port: 3006 
+18:49:27.863 INFO  Server is running on port: 3006 
+18:49:36.436 INFO  Server is running on port: 3006 
+18:49:46.964 INFO  Server is running on port: 3006 
+18:49:48.006 INFO  Server is running on port: 3006 
+18:49:57.874 INFO  Server is running on port: 3006 
+18:50:02.154 INFO  Server is running on port: 3006 
+18:50:05.982 INFO  Server is running on port: 3006 
+18:50:38.334 INFO  Server is running on port: 3006 
+18:50:40.440 INFO  Server is running on port: 3006 
+18:50:53.988 INFO  Server is running on port: 3006 
+18:51:02.082 INFO  Server is running on port: 3006 
+18:51:14.380 INFO  Server is running on port: 3006 
+18:51:19.786 INFO  Server is running on port: 3006 
+18:51:20.969 INFO  Server is running on port: 3006 
+18:51:28.271 INFO  Server is running on port: 3006 
+18:51:31.128 INFO  Server is running on port: 3006 
+18:51:37.067 INFO  Server is running on port: 3006 
+18:51:59.411 INFO  Server is running on port: 3006 
+18:52:15.900 INFO  Server is running on port: 3006 
+18:52:29.047 INFO  Server is running on port: 3006 
+18:52:31.652 INFO  Server is running on port: 3006 
+18:52:32.454 INFO  Server is running on port: 3006 
+18:52:50.812 INFO  Server is running on port: 3006 
+18:52:51.842 INFO  Server is running on port: 3006 
+18:53:01.094 INFO  Server is running on port: 3006 
+18:53:02.431 INFO  Server is running on port: 3006 
+18:53:22.060 INFO  Connection %d connected9 
+18:53:22.060 INFO  Connection %d acquired9 
+18:53:22.063 INFO  Connection %d released9 
+19:00:01.715 INFO  Connection %d acquired9 
+19:00:01.716 INFO  Connection %d released9 
+19:00:28.116 INFO  Connection %d acquired9 
+19:00:28.128 INFO  Connection %d released9 
+19:00:58.948 INFO  Server is running on port: 3006 
+19:01:00.463 INFO  Server is running on port: 3006 
+19:03:55.512 INFO  Server is running on port: 3006 
+19:04:39.037 INFO  Server is running on port: 3006 
+19:04:41.737 INFO  Server is running on port: 3006 
+19:04:43.143 INFO  Server is running on port: 3006 
+19:04:46.267 INFO  Server is running on port: 3006 
+19:04:48.388 INFO  Server is running on port: 3006 
+19:04:49.149 INFO  Server is running on port: 3006 
+19:04:57.305 INFO  Server is running on port: 3006 
+19:05:03.589 INFO  Server is running on port: 3006 
+19:05:10.307 INFO  Server is running on port: 3006 
+19:05:15.912 INFO  Server is running on port: 3006 
+19:05:24.853 INFO  Server is running on port: 3006 
+19:05:31.350 INFO  Server is running on port: 3006 
+19:05:57.972 INFO  Server is running on port: 3006 
+19:06:01.162 INFO  Server is running on port: 3006 
+19:06:05.152 INFO  Server is running on port: 3006 
+19:06:08.926 INFO  Server is running on port: 3006 
+19:06:13.001 INFO  Server is running on port: 3006 
+19:06:18.172 INFO  Server is running on port: 3006 
+19:06:27.466 INFO  Server is running on port: 3006 
+19:06:29.017 INFO  Server is running on port: 3006 
+19:06:33.171 INFO  Server is running on port: 3006 
+19:06:36.491 INFO  Server is running on port: 3006 
+19:06:40.212 INFO  Server is running on port: 3006 
+19:06:43.003 INFO  Server is running on port: 3006 
+19:06:46.856 INFO  Server is running on port: 3006 
+19:06:53.832 INFO  Server is running on port: 3006 
+19:06:57.262 INFO  Server is running on port: 3006 
+19:07:01.644 INFO  Server is running on port: 3006 
+19:07:10.371 INFO  Server is running on port: 3006 
+19:07:14.947 INFO  Server is running on port: 3006 
+19:07:18.481 INFO  Server is running on port: 3006 
+19:07:20.659 INFO  Server is running on port: 3006 
+19:07:23.299 INFO  Server is running on port: 3006 
+19:07:26.006 INFO  Server is running on port: 3006 
+19:07:28.370 INFO  Server is running on port: 3006 
+19:07:38.160 INFO  Server is running on port: 3006 
+19:07:47.707 INFO  Server is running on port: 3006 
+19:08:14.304 INFO  Server is running on port: 3006 
+19:09:16.727 INFO  Server is running on port: 3006 
+19:09:18.056 INFO  Connection %d connected10 
+19:09:18.056 INFO  Connection %d acquired10 
+19:09:18.075 INFO  Connection %d released10 
+19:09:25.832 INFO  Server is running on port: 3006 
+19:09:29.016 INFO  Server is running on port: 3006 
+19:09:30.167 INFO  Connection %d connected11 
+19:09:30.167 INFO  Connection %d acquired11 
+19:09:30.172 INFO  Connection %d released11 
+19:09:43.161 INFO  Server is running on port: 3006 
+19:09:43.447 INFO  Connection %d connected12 
+19:09:43.447 INFO  Connection %d acquired12 
+19:09:43.499 INFO  Connection %d released12 
+19:10:19.147 INFO  Server is running on port: 3006 
+19:10:21.960 INFO  Server is running on port: 3006 
+19:10:29.846 INFO  Server is running on port: 3006 
+19:10:39.029 INFO  Server is running on port: 3006 
+19:10:47.062 INFO  Server is running on port: 3006 
+19:10:58.469 INFO  Server is running on port: 3006 
+19:11:04.729 INFO  Server is running on port: 3006 
+19:11:23.378 INFO  Server is running on port: 3006 
+19:11:45.226 INFO  Server is running on port: 3006 
+19:11:59.857 INFO  Server is running on port: 3006 
+19:12:00.864 INFO  Server is running on port: 3006 
+19:12:15.377 INFO  Server is running on port: 3006 
+19:12:36.792 INFO  Server is running on port: 3006 
+19:12:42.598 INFO  Server is running on port: 3006 
+19:12:48.835 INFO  Server is running on port: 3006 
+19:12:51.596 INFO  Server is running on port: 3006 
+19:12:54.561 INFO  Server is running on port: 3006 
+19:13:02.088 INFO  Server is running on port: 3006 
+19:13:06.109 INFO  Server is running on port: 3006 
+19:13:08.198 INFO  Server is running on port: 3006 
+19:13:12.178 INFO  Server is running on port: 3006 
+19:13:14.505 INFO  Server is running on port: 3006 
+19:13:15.857 INFO  Server is running on port: 3006 
+19:13:25.533 INFO  Server is running on port: 3006 
+19:13:31.295 INFO  Server is running on port: 3006 
+19:13:35.445 INFO  Server is running on port: 3006 
+19:13:40.792 INFO  Server is running on port: 3006 
+19:13:45.688 INFO  Server is running on port: 3006 
+19:13:51.037 INFO  Server is running on port: 3006 
+19:14:11.316 INFO  Server is running on port: 3006 
+19:14:18.805 INFO  Server is running on port: 3006 
+19:14:19.394 INFO  Server is running on port: 3006 
+19:14:25.290 INFO  Server is running on port: 3006 
+19:14:28.620 INFO  Server is running on port: 3006 
+19:14:29.563 INFO  Server is running on port: 3006 
+19:16:06.884 INFO  Connection %d connected13 
+19:16:06.884 INFO  Connection %d acquired13 
+19:16:06.901 INFO  Connection %d released13 
+19:16:14.381 INFO  Server is running on port: 3006 
+19:16:16.231 INFO  Server is running on port: 3006 
+19:16:17.950 INFO  Server is running on port: 3006 
+19:16:21.360 INFO  Server is running on port: 3006 
+19:16:22.722 INFO  Connection %d connected14 
+19:16:22.722 INFO  Connection %d acquired14 
+19:16:22.729 INFO  Connection %d released14 
+19:16:44.868 INFO  Server is running on port: 3006 
+19:16:47.064 INFO  Connection %d connected15 
+19:16:47.064 INFO  Connection %d acquired15 
+19:16:47.122 INFO  Connection %d released15 
+19:17:14.599 INFO  Server is running on port: 3006 
+19:17:30.067 INFO  Server is running on port: 3006 
+19:17:39.642 INFO  Server is running on port: 3006 
+19:17:44.786 INFO  Server is running on port: 3006 
+19:17:47.986 INFO  Server is running on port: 3006 
+19:17:53.004 INFO  Server is running on port: 3006 
+19:17:56.642 INFO  Server is running on port: 3006 
+19:17:59.302 INFO  Server is running on port: 3006 
+19:18:02.084 INFO  Server is running on port: 3006 
+19:18:07.144 INFO  Server is running on port: 3006 
+19:18:09.456 INFO  Server is running on port: 3006 
+19:18:15.174 INFO  Server is running on port: 3006 
+19:18:15.949 INFO  Server is running on port: 3006 
+19:18:20.267 INFO  Server is running on port: 3006 
+19:18:21.699 INFO  Server is running on port: 3006 
+19:18:24.407 INFO  Server is running on port: 3006 
+19:19:44.094 INFO  Connection %d connected16 
+19:19:44.094 INFO  Connection %d acquired16 
+19:19:44.196 INFO  Connection %d released16 
+19:21:23.372 INFO  Server is running on port: 3006 
+19:21:24.824 INFO  Connection %d connected17 
+19:21:24.824 INFO  Connection %d acquired17 
+19:21:24.827 INFO  Connection %d released17 
+19:23:58.568 INFO  Server is running on port: 3006 
+19:24:13.130 INFO  Server is running on port: 3006 
+19:24:22.551 INFO  Server is running on port: 3006 
+19:24:24.787 INFO  Server is running on port: 3006 
+19:24:28.193 INFO  Server is running on port: 3006 
+19:24:38.388 INFO  Server is running on port: 3006 
+19:24:40.374 INFO  Server is running on port: 3006 
+19:24:43.086 INFO  Server is running on port: 3006 
+19:24:53.418 INFO  Server is running on port: 3006 
+19:24:59.995 INFO  Server is running on port: 3006 
+19:25:02.218 INFO  Server is running on port: 3006 
+19:25:11.380 INFO  Server is running on port: 3006 
+19:25:20.444 INFO  Server is running on port: 3006 
+19:25:26.296 INFO  Server is running on port: 3006 
+19:25:34.282 INFO  Server is running on port: 3006 
+19:27:11.925 INFO  Server is running on port: 3006 
+19:27:28.466 INFO  Server is running on port: 3006 
+19:27:34.354 INFO  Server is running on port: 3006 
+19:27:38.951 INFO  Server is running on port: 3006 
+19:27:43.306 INFO  Server is running on port: 3006 
+19:27:47.606 INFO  Server is running on port: 3006 
+19:27:49.908 INFO  Server is running on port: 3006 
+19:27:56.117 INFO  Server is running on port: 3006 
+19:28:06.728 INFO  Server is running on port: 3006 
+19:28:11.952 INFO  Server is running on port: 3006 
+19:28:17.059 INFO  Server is running on port: 3006 
+19:28:23.012 INFO  Server is running on port: 3006 
+19:28:28.936 INFO  Server is running on port: 3006 
+19:28:31.226 INFO  Server is running on port: 3006 
+19:28:39.932 INFO  Server is running on port: 3006 
+19:28:46.253 INFO  Server is running on port: 3006 
+19:28:47.241 INFO  Server is running on port: 3006 
+19:28:54.191 INFO  Connection %d connected18 
+19:28:54.191 INFO  Connection %d acquired18 
+19:28:54.194 INFO  Connection %d released18 
+19:29:29.684 INFO  Server is running on port: 3006 
+19:29:30.306 INFO  Server is running on port: 3006 
+19:29:31.977 INFO  Connection %d connected19 
+19:29:31.977 INFO  Connection %d acquired19 
+19:29:32.018 INFO  Connection %d released19 
+19:29:54.394 INFO  Server is running on port: 3006 
+19:30:06.576 INFO  Server is running on port: 3006 
+19:30:31.141 INFO  Server is running on port: 3006 
+19:30:41.491 INFO  Server is running on port: 3006 
+19:30:46.175 INFO  Server is running on port: 3006 
+19:30:48.708 INFO  Server is running on port: 3006 
+19:30:52.738 INFO  Server is running on port: 3006 
+19:30:53.907 INFO  Server is running on port: 3006 
+19:30:58.502 INFO  Server is running on port: 3006 
+19:31:13.087 INFO  Server is running on port: 3006 
+19:31:23.851 INFO  Server is running on port: 3006 
+19:31:26.314 INFO  Server is running on port: 3006 
+19:31:28.738 INFO  Server is running on port: 3006 
+19:31:34.417 INFO  Server is running on port: 3006 
+19:31:38.337 INFO  Server is running on port: 3006 
+19:31:42.613 INFO  Server is running on port: 3006 
+19:31:47.432 INFO  Server is running on port: 3006 
+19:31:51.819 INFO  Server is running on port: 3006 
+19:31:54.853 INFO  Server is running on port: 3006 
+19:31:59.329 INFO  Server is running on port: 3006 
+19:32:50.492 INFO  Connection %d connected20 
+19:32:50.492 INFO  Connection %d acquired20 
+19:32:50.540 INFO  Connection %d released20 
+19:34:05.289 INFO  Server is running on port: 3006 
+19:34:08.487 INFO  Server is running on port: 3006 
+19:37:21.313 INFO  Server is running on port: 3006 
+19:37:33.168 INFO  Server is running on port: 3006 
+19:38:10.237 INFO  Server is running on port: 3006 
+19:38:17.508 INFO  Server is running on port: 3006 
+19:38:29.429 INFO  Server is running on port: 3006 
+19:38:32.357 INFO  Server is running on port: 3006 
+19:38:33.845 INFO  Server is running on port: 3006 
+19:38:56.215 INFO  Server is running on port: 3006 
+19:38:56.969 INFO  Server is running on port: 3006 
+19:39:05.060 INFO  Server is running on port: 3006 
+19:39:12.237 INFO  Server is running on port: 3006 
+19:39:18.188 INFO  Server is running on port: 3006 
+19:39:22.522 INFO  Server is running on port: 3006 
+19:39:33.265 INFO  Server is running on port: 3006 
+19:39:41.339 INFO  Server is running on port: 3006 
+19:39:46.762 INFO  Server is running on port: 3006 
+19:39:53.768 INFO  Server is running on port: 3006 
+19:39:55.040 INFO  Server is running on port: 3006 
+19:40:07.188 INFO  Server is running on port: 3006 
+19:40:10.868 INFO  Server is running on port: 3006 
+19:40:12.637 INFO  Server is running on port: 3006 
+19:40:20.750 INFO  Server is running on port: 3006 
+19:40:21.727 INFO  Server is running on port: 3006 
+19:40:50.960 INFO  Connection %d connected21 
+19:40:50.960 INFO  Connection %d acquired21 
+19:40:50.981 INFO  Connection %d released21 
+19:40:59.487 INFO  Server is running on port: 3006 
+19:41:01.487 INFO  Server is running on port: 3006 
+19:41:24.200 INFO  Server is running on port: 3006 
+19:41:28.434 INFO  Server is running on port: 3006 
+19:41:35.895 INFO  Server is running on port: 3006 
+19:41:48.613 INFO  Connection %d connected22 
+19:41:48.613 INFO  Connection %d acquired22 
+19:41:48.655 INFO  Connection %d released22 
+19:41:59.529 INFO  Server is running on port: 3006 
+19:43:21.378 INFO  Server is running on port: 3006 
+19:43:29.844 INFO  Server is running on port: 3006 
+19:43:46.481 INFO  Server is running on port: 3006 
+19:43:53.174 INFO  Server is running on port: 3006 
+19:43:56.010 INFO  Server is running on port: 3006 
+19:44:00.484 INFO  Server is running on port: 3006 
+19:44:03.260 INFO  Server is running on port: 3006 
+19:44:15.957 INFO  Server is running on port: 3006 
+19:44:18.872 INFO  Server is running on port: 3006 
+19:44:23.315 INFO  Server is running on port: 3006 
+19:44:25.203 INFO  Server is running on port: 3006 
+19:44:49.475 INFO  Server is running on port: 3006 
+19:44:54.586 INFO  Server is running on port: 3006 
+19:44:59.599 INFO  Server is running on port: 3006 
+19:45:22.595 INFO  Connection %d connected23 
+19:45:22.595 INFO  Connection %d acquired23 
+19:45:22.597 INFO  Connection %d released23 
+19:45:28.787 INFO  Server is running on port: 3006 
+19:45:37.803 INFO  Server is running on port: 3006 
+19:45:52.907 INFO  Server is running on port: 3006 
+19:45:55.824 INFO  Server is running on port: 3006 
+19:46:10.683 INFO  Server is running on port: 3006 
+19:47:11.441 INFO  Connection %d connected24 
+19:47:11.441 INFO  Connection %d acquired24 
+19:47:11.449 INFO  Connection %d released24 
+19:47:23.415 INFO  Server is running on port: 3006 
+19:47:27.430 INFO  Server is running on port: 3006 
+19:47:36.639 INFO  Server is running on port: 3006 
+19:47:40.256 INFO  Server is running on port: 3006 
+19:47:42.126 INFO  Server is running on port: 3006 
+19:47:45.487 INFO  Server is running on port: 3006 
+19:47:55.998 INFO  Server is running on port: 3006 
+19:47:58.214 INFO  Server is running on port: 3006 
+19:47:58.822 INFO  Server is running on port: 3006 
+19:48:02.113 INFO  Connection %d connected25 
+19:48:02.113 INFO  Connection %d acquired25 
+19:48:02.154 INFO  Connection %d released25 
+19:48:24.211 INFO  Server is running on port: 3006 
+19:49:11.397 INFO  Server is running on port: 3006 
+19:49:28.033 INFO  Server is running on port: 3006 
+19:49:29.610 INFO  Server is running on port: 3006 
+19:49:37.115 INFO  Server is running on port: 3006 
+19:49:44.890 INFO  Server is running on port: 3006 
+19:49:50.201 INFO  Server is running on port: 3006 
+19:49:54.156 INFO  Server is running on port: 3006 
+19:49:54.751 INFO  Server is running on port: 3006 
+19:50:04.912 INFO  Server is running on port: 3006 
+19:50:06.721 INFO  Server is running on port: 3006 
+19:50:10.912 INFO  Server is running on port: 3006 
+19:50:17.853 INFO  Server is running on port: 3006 
+19:50:22.271 INFO  Server is running on port: 3006 
+19:50:27.647 INFO  Server is running on port: 3006 
+19:50:31.505 INFO  Server is running on port: 3006 
+19:50:50.538 INFO  Server is running on port: 3006 
+19:50:58.435 INFO  Server is running on port: 3006 
+19:51:07.563 INFO  Connection %d connected26 
+19:51:07.563 INFO  Connection %d acquired26 
+19:51:07.606 INFO  Connection %d released26 
+19:51:12.318 INFO  Connection %d acquired26 
+19:51:12.319 INFO  Connection %d released26 
+19:51:40.837 INFO  Server is running on port: 3006 
+19:51:46.716 INFO  Server is running on port: 3006 
+19:51:48.867 INFO  Server is running on port: 3006 
+19:51:52.878 INFO  Server is running on port: 3006 
+19:51:56.442 INFO  Server is running on port: 3006 
+19:52:01.762 INFO  Server is running on port: 3006 
+19:52:04.125 INFO  Server is running on port: 3006 
+19:52:23.367 INFO  Server is running on port: 3006 
+19:52:47.941 INFO  Server is running on port: 3006 
+19:52:57.198 INFO  Server is running on port: 3006 
+19:53:03.903 INFO  Server is running on port: 3006 
+19:53:11.746 INFO  Server is running on port: 3006 
+19:53:17.836 INFO  Server is running on port: 3006 
+19:53:21.148 INFO  Server is running on port: 3006 
+19:53:24.977 INFO  Server is running on port: 3006 
+19:53:31.249 INFO  Server is running on port: 3006 
+19:53:34.375 INFO  Server is running on port: 3006 
+19:53:35.225 INFO  Server is running on port: 3006 
+19:53:48.501 INFO  Server is running on port: 3006 
+19:53:49.951 INFO  Server is running on port: 3006 
+19:54:29.300 INFO  Server is running on port: 3006 
+19:54:36.775 INFO  Server is running on port: 3006 
+19:54:54.552 INFO  Connection %d connected27 
+19:54:54.552 INFO  Connection %d acquired27 
+19:54:54.565 INFO  Connection %d released27 
+19:55:14.742 INFO  Connection %d acquired27 
+19:55:14.797 INFO  Connection %d released27 
+19:55:28.912 INFO  Server is running on port: 3006 
+19:55:30.798 INFO  Connection %d connected28 
+19:55:30.798 INFO  Connection %d acquired28 
+19:55:30.801 INFO  Connection %d released28 
+19:55:34.796 INFO  Server is running on port: 3006 
+19:55:55.309 INFO  Server is running on port: 3006 
+19:56:50.008 INFO  Server is running on port: 3006 
+19:57:04.098 INFO  Server is running on port: 3006 
+19:57:20.767 INFO  Server is running on port: 3006 
+19:57:23.104 INFO  Server is running on port: 3006 
+19:57:27.230 INFO  Server is running on port: 3006 
+19:57:32.855 INFO  Server is running on port: 3006 
+19:58:51.749 INFO  Server is running on port: 3006 
+19:58:55.340 INFO  Server is running on port: 3006 
+19:59:06.700 INFO  Server is running on port: 3006 
+19:59:12.372 INFO  Server is running on port: 3006 
+19:59:13.085 INFO  Server is running on port: 3006 
+19:59:20.963 INFO  Server is running on port: 3006 
+19:59:26.689 INFO  Server is running on port: 3006 
+19:59:43.184 INFO  Connection %d connected29 
+19:59:43.184 INFO  Connection %d acquired29 
+19:59:43.187 INFO  Connection %d released29 
+19:59:58.530 INFO  Server is running on port: 3006 
+20:00:11.808 INFO  Server is running on port: 3006 
+20:00:20.411 INFO  Server is running on port: 3006 
+20:00:23.791 INFO  Server is running on port: 3006 
+20:00:27.440 INFO  Server is running on port: 3006 
+20:00:34.896 INFO  Server is running on port: 3006 
+20:00:40.995 INFO  Server is running on port: 3006 
+20:00:43.271 INFO  Server is running on port: 3006 
+20:00:46.853 INFO  Server is running on port: 3006 
+20:00:51.601 INFO  Server is running on port: 3006 
+20:00:53.247 INFO  Server is running on port: 3006 
+20:01:01.361 INFO  Server is running on port: 3006 
+20:01:05.255 INFO  Server is running on port: 3006 
+20:01:53.592 INFO  Connection %d connected30 
+20:01:53.592 INFO  Connection %d acquired30 
+20:01:53.636 INFO  Connection %d released30 
+20:02:11.957 INFO  Server is running on port: 3006 
+20:02:13.647 INFO  Server is running on port: 3006 
+20:02:14.337 INFO  Server is running on port: 3006 
+20:02:20.226 INFO  Server is running on port: 3006 
+20:02:27.782 INFO  Server is running on port: 3006 
+20:02:35.188 INFO  Server is running on port: 3006 
+20:02:44.517 INFO  Server is running on port: 3006 
+20:02:49.310 INFO  Server is running on port: 3006 
+20:02:54.450 INFO  Server is running on port: 3006 
+20:02:58.562 INFO  Server is running on port: 3006 
+20:03:10.851 INFO  Server is running on port: 3006 
+20:03:16.915 INFO  Server is running on port: 3006 
+20:03:22.889 INFO  Server is running on port: 3006 
+20:03:29.863 INFO  Server is running on port: 3006 
+20:03:35.302 INFO  Server is running on port: 3006 
+20:03:36.491 INFO  Server is running on port: 3006 
+20:04:04.105 INFO  Connection %d connected31 
+20:04:04.105 INFO  Connection %d acquired31 
+20:04:04.107 INFO  Connection %d released31 
+20:04:29.531 INFO  Connection %d acquired31 
+20:04:29.571 INFO  Connection %d released31 
+20:04:34.305 INFO  Connection %d acquired31 
+20:04:34.306 INFO  Connection %d released31 
+20:04:43.531 INFO  Server is running on port: 3006 
+20:05:00.437 INFO  Server is running on port: 3006 
+20:05:08.316 INFO  Server is running on port: 3006 
+20:05:14.979 INFO  Server is running on port: 3006 
+20:05:19.245 INFO  Server is running on port: 3006 
+20:05:28.193 INFO  Server is running on port: 3006 
+20:05:35.415 INFO  Server is running on port: 3006 
+20:05:38.555 INFO  Server is running on port: 3006 
+20:05:45.386 INFO  Server is running on port: 3006 
+20:05:49.302 INFO  Server is running on port: 3006 
+20:06:03.526 INFO  Server is running on port: 3006 
+20:07:55.004 INFO  Server is running on port: 3006 
+20:07:57.764 INFO  Server is running on port: 3006 
+20:08:16.823 INFO  Connection %d connected32 
+20:08:16.823 INFO  Connection %d acquired32 
+20:08:16.827 INFO  Connection %d released32 
+20:08:21.788 INFO  Connection %d acquired32 
+20:08:21.789 INFO  Connection %d released32 
+20:08:29.566 INFO  Connection %d acquired32 
+20:08:29.567 INFO  Connection %d released32 
+20:08:43.784 INFO  Server is running on port: 3006 
+20:08:52.339 INFO  Server is running on port: 3006 
+20:08:53.694 INFO  Connection %d connected33 
+20:08:53.694 INFO  Connection %d acquired33 
+20:08:53.761 INFO  Connection %d released33 
+20:09:08.520 INFO  Connection %d acquired33 
+20:09:08.521 INFO  Connection %d released33 
+20:09:30.914 INFO  Server is running on port: 3006 
+20:09:45.747 INFO  Server is running on port: 3006 
+20:10:02.121 INFO  Server is running on port: 3006 
+20:10:54.597 INFO  Server is running on port: 3006 
+20:10:56.088 INFO  Connection %d connected34 
+20:10:56.088 INFO  Connection %d acquired34 
+20:10:56.091 INFO  Connection %d released34 
+20:12:27.696 INFO  Server is running on port: 3006 
+20:12:29.697 INFO  Server is running on port: 3006 
+20:12:48.961 INFO  Server is running on port: 3006 
+20:12:57.166 INFO  Server is running on port: 3006 
+20:13:17.667 INFO  Connection %d connected35 
+20:13:17.667 INFO  Connection %d acquired35 
+20:13:17.671 INFO  Connection %d released35 
+20:13:30.307 INFO  Server is running on port: 3006 
+20:13:43.878 INFO  Server is running on port: 3006 
+20:13:54.093 INFO  Server is running on port: 3006 
+20:13:57.611 INFO  Server is running on port: 3006 
+20:14:01.243 INFO  Server is running on port: 3006 
+20:14:03.107 INFO  Server is running on port: 3006 
+20:14:05.844 INFO  Server is running on port: 3006 
+20:14:21.042 INFO  Connection %d connected36 
+20:14:21.042 INFO  Connection %d acquired36 
+20:14:21.046 INFO  Connection %d released36 
+20:14:28.361 INFO  Connection %d acquired36 
+20:14:28.404 INFO  Connection %d released36 
+22:25:41.187 INFO  Server is running on port: 3006 
+22:26:45.150 INFO  Server is running on port: 3006 
+22:27:35.527 INFO  Server is running on port: 3006 
+22:28:11.045 INFO  Server is running on port: 3006 
+23:14:31.095 INFO  Server is running on port: 3006 
+23:14:33.826 INFO  Server is running on port: 3006 
+23:14:51.806 INFO  Server is running on port: 3006 
+23:14:59.569 INFO  Connection %d connected68 
+23:14:59.570 INFO  Connection %d acquired68 
+23:14:59.621 INFO  Connection %d released68 
+23:15:24.247 INFO  Server is running on port: 3006 
+23:15:28.230 INFO  Server is running on port: 3006 
+23:15:44.228 INFO  Server is running on port: 3006 
+23:15:47.170 INFO  Server is running on port: 3006 
+23:15:48.129 INFO  Server is running on port: 3006 
+23:16:09.025 INFO  Server is running on port: 3006 
+23:16:10.784 INFO  Server is running on port: 3006 
+23:16:14.580 INFO  Server is running on port: 3006 
+23:16:25.971 INFO  Server is running on port: 3006 
+23:16:29.608 INFO  Server is running on port: 3006 
+23:16:30.577 INFO  Server is running on port: 3006 
+23:16:46.942 INFO  Connection %d connected69 
+23:16:46.942 INFO  Connection %d acquired69 
+23:16:46.976 INFO  Connection %d released69 
+23:16:58.714 INFO  Server is running on port: 3006 
+23:16:59.313 INFO  Connection %d connected70 
+23:16:59.313 INFO  Connection %d acquired70 
+23:16:59.318 INFO  Connection %d released70 
+23:17:03.271 INFO  Server is running on port: 3006 
+23:17:23.610 INFO  Server is running on port: 3006 
+23:17:26.082 INFO  Server is running on port: 3006 
+23:17:37.675 INFO  Server is running on port: 3006 
+23:17:40.862 INFO  Server is running on port: 3006 
+23:17:56.494 INFO  Server is running on port: 3006 
+23:18:05.414 INFO  Server is running on port: 3006 
+23:18:06.920 INFO  Server is running on port: 3006 
+23:18:23.394 INFO  Connection %d connected71 
+23:18:23.394 INFO  Connection %d acquired71 
+23:18:23.411 INFO  Connection %d released71 
+23:18:27.166 INFO  Connection %d acquired71 
+23:18:27.168 INFO  Connection %d released71 
+23:18:31.888 INFO  Connection %d acquired71 
+23:18:31.893 INFO  Connection %d released71 
+23:18:35.463 INFO  Connection %d acquired71 
+23:18:35.466 INFO  Connection %d released71 
+23:18:41.035 INFO  Connection %d acquired71 
+23:18:41.036 INFO  Connection %d released71 
+23:19:25.538 INFO  Server is running on port: 3006 
+23:19:29.104 INFO  Server is running on port: 3006 
+23:19:37.423 INFO  Server is running on port: 3006 
+23:19:39.323 INFO  Server is running on port: 3006 
+23:20:02.830 INFO  Server is running on port: 3006 
+23:20:05.141 INFO  Server is running on port: 3006 
+23:20:07.146 INFO  Server is running on port: 3006 
+23:20:13.034 INFO  Server is running on port: 3006 
+23:20:30.164 INFO  Server is running on port: 3006 
+23:20:46.750 INFO  Connection %d connected73 
+23:20:46.750 INFO  Connection %d acquired73 
+23:20:46.755 INFO  Connection %d released73 
+23:21:12.890 INFO  Server is running on port: 3006 
+23:21:19.777 INFO  Server is running on port: 3006 
+23:21:23.917 INFO  Connection %d connected74 
+23:21:23.917 INFO  Connection %d acquired74 
+23:21:23.920 INFO  Connection %d released74 
+23:21:27.499 INFO  Connection %d acquired74 
+23:21:27.502 INFO  Connection %d released74 
+23:21:30.424 INFO  Server is running on port: 3006 
+23:21:46.301 INFO  Server is running on port: 3006 
+23:21:54.087 INFO  Server is running on port: 3006 
+23:22:41.897 INFO  Server is running on port: 3006 
+23:22:49.911 INFO  Server is running on port: 3006 
+23:22:52.146 INFO  Server is running on port: 3006 
+23:22:54.539 INFO  Server is running on port: 3006 
+23:23:10.014 INFO  Server is running on port: 3006 
+23:23:13.530 INFO  Server is running on port: 3006 
+23:23:16.869 INFO  Server is running on port: 3006 
+23:23:23.557 INFO  Server is running on port: 3006 
+23:23:40.175 INFO  Connection %d connected75 
+23:23:40.175 INFO  Connection %d acquired75 
+23:23:40.196 INFO  Connection %d released75 
+23:23:43.931 INFO  Server is running on port: 3006 
+23:23:56.224 INFO  Server is running on port: 3006 
+21:12:02.190 INFO  Server is running on port: 3006 
+21:14:46.273 INFO  Server is running on port: 3006 
+21:14:48.952 INFO  Server is running on port: 3006 
+21:14:51.545 INFO  Server is running on port: 3006 
+21:14:58.573 INFO  Server is running on port: 3006 
+21:15:06.900 INFO  Server is running on port: 3006 
+21:15:10.379 INFO  Server is running on port: 3006 
+21:15:34.430 INFO  Server is running on port: 3006 
+21:15:38.488 INFO  Server is running on port: 3006 
+21:15:44.926 INFO  Server is running on port: 3006 
+21:15:55.693 INFO  Server is running on port: 3006 
+21:19:33.481 INFO  Server is running on port: 3006 
+08:12:57.815 INFO  Server is running on port: 3006 
+08:14:32.206 INFO  Server is running on port: 3006 
+08:14:36.853 INFO  Connection %d connected8 
+08:14:36.853 INFO  Connection %d acquired8 
+08:14:36.951 INFO  Connection %d released8 
+08:17:10.318 INFO  Connection %d acquired8 
+08:17:10.334 INFO  Connection %d released8 
+08:18:25.754 INFO  Connection %d acquired8 
+08:18:25.771 INFO  Connection %d released8 
+08:18:36.747 INFO  Connection %d acquired8 
+08:18:36.749 INFO  Connection %d released8 
+08:19:00.092 INFO  Connection %d acquired8 
+08:19:00.094 INFO  Connection %d released8 
+08:19:04.813 INFO  Connection %d acquired8 
+08:19:04.832 INFO  Connection %d released8 
+08:19:34.373 INFO  Connection %d acquired8 
+08:19:34.374 INFO  Connection %d released8 
+08:19:42.418 INFO  Connection %d acquired8 
+08:19:42.420 INFO  Connection %d released8 
+08:20:20.990 INFO  Connection %d acquired8 
+08:20:20.993 INFO  Connection %d released8 
+08:20:25.131 INFO  Connection %d acquired8 
+08:20:25.132 INFO  Connection %d released8 
+08:23:41.687 INFO  Connection %d acquired8 
+08:23:41.703 INFO  Connection %d released8 
+08:24:13.584 INFO  Connection %d acquired8 
+08:24:13.585 INFO  Connection %d released8 
+08:24:40.849 INFO  Connection %d acquired8 
+08:24:40.851 INFO  Connection %d released8 
+08:24:51.212 INFO  Connection %d acquired8 
+08:24:51.215 INFO  Connection %d released8 
+08:25:21.842 INFO  Connection %d acquired8 
+08:25:21.843 INFO  Connection %d released8 
+08:25:46.862 INFO  Connection %d acquired8 
+08:25:46.863 INFO  Connection %d released8 
+08:26:24.757 INFO  Connection %d acquired8 
+08:26:24.772 INFO  Connection %d released8 
+08:28:09.539 INFO  Connection %d acquired8 
+08:28:09.555 INFO  Connection %d released8 
+08:28:15.832 INFO  Connection %d acquired8 
+08:28:15.833 INFO  Connection %d released8 
+08:28:39.658 INFO  Connection %d acquired8 
+08:28:39.659 INFO  Connection %d released8 
+08:29:01.818 INFO  Connection %d acquired8 
+08:29:01.819 INFO  Connection %d released8 
+08:29:05.752 INFO  Connection %d acquired8 
+08:29:05.766 INFO  Connection %d released8 
+08:29:33.491 INFO  Connection %d acquired8 
+08:29:33.492 INFO  Connection %d released8 
+08:29:57.952 INFO  Connection %d acquired8 
+08:29:57.965 INFO  Connection %d released8 
+08:30:56.335 INFO  Connection %d acquired8 
+08:30:56.341 INFO  Connection %d released8 
+08:31:00.536 INFO  Connection %d acquired8 
+08:31:00.550 INFO  Connection %d released8 
+08:31:25.344 INFO  Connection %d acquired8 
+08:31:25.345 INFO  Connection %d released8 
+08:31:42.054 INFO  Connection %d acquired8 
+08:31:42.068 INFO  Connection %d released8 
+08:34:36.684 INFO  Connection %d acquired8 
+08:34:36.685 INFO  Connection %d released8 
+08:34:56.560 INFO  Connection %d acquired8 
+08:34:56.563 INFO  Connection %d released8 
+08:35:31.186 INFO  Connection %d acquired8 
+08:35:31.187 INFO  Connection %d released8 
+08:35:55.289 INFO  Connection %d acquired8 
+08:35:55.291 INFO  Connection %d released8 
+08:36:07.182 INFO  Connection %d acquired8 
+08:36:07.195 INFO  Connection %d released8 
+08:36:28.795 INFO  Connection %d acquired8 
+08:36:28.796 INFO  Connection %d released8 
+08:36:45.137 INFO  Connection %d acquired8 
+08:36:45.139 INFO  Connection %d released8 
+12:59:39.565 INFO  Server is running on port: 3006 
+13:02:38.521 INFO  Server is running on port: 3006 
+13:02:58.236 INFO  Server is running on port: 3006 
+13:02:59.657 INFO  Server is running on port: 3006 
+13:04:45.810 INFO  Server is running on port: 3006 
+13:04:54.336 INFO  Server is running on port: 3006 
+13:04:55.979 INFO  Server is running on port: 3006 
+13:04:57.586 INFO  Server is running on port: 3006 
+13:05:02.566 INFO  Server is running on port: 3006 

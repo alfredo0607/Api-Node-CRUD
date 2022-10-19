@@ -1,0 +1,99 @@
+asesor
+
+GET - http://localhost:3006/api/v1/adviser/get-adviser
+
+POST - http://localhost:3006/api/v1/adviser/add-adviser
+
+PUT - http://localhost:3006/api/v1/adviser/update-adviser/11
+
+DEL - http://localhost:3006/api/v1/adviser/delete-adviser/2
+
+GET - http://localhost:3006/api/v1/adviser/search-adviser/2
+
+{
+    "name":"valentina",
+    "surname":"domi",
+    "address":"carrera",
+    "phone":"122222",
+    "email":"all@gmail.com",
+    "salary":111111
+}
+
+
+PAGOS
+
+GET - http://localhost:3006/api/v1/payments/get-payments
+
+POST - http://localhost:3006/api/v1/payments/add-payments
+
+PUT - http://localhost:3006/api/v1/payments/update-payments/2
+
+DEL - http://localhost:3006/api/v1/payments/delete-payments/2
+
+GET - http://localhost:3006/api/v1/payments/search-payments/2
+
+
+{
+    "fecha":"2022/01/01",
+    "valor":"1000",
+    "tipo":"bogota",
+    "observacion":"bogota",
+    "factura_id": 0
+}
+
+
+
+
+PLANES 
+
+GET - http://localhost:3006/api/v1/plans/get-plans
+
+POST - http://localhost:3006/api/v1/plans/add-plans
+
+PUT - http://localhost:3006/api/v1/plans/update-plans/3
+
+DEL - http://localhost:3006/api/v1/plans/delete-plans/3
+
+GET - http://localhost:3006/api/v1/plans/search-plans/3
+
+{
+    "nombre":"valentina",
+    "descripcion":"domi",
+    "fechainicio":"carrera",
+    "fechafinal":"122222",
+    "precio":"all@gmail.com"
+}
+
+SERVICES 
+
+GET - http://localhost:3006/api/v1/services/get-services
+
+POST - http://localhost:3006/api/v1/services/add-services
+
+PUT - http://localhost:3006/api/v1/services/update-services/4
+
+DEL - http://localhost:3006/api/v1/services/delete-services/4
+
+GET - http://localhost:3006/api/v1/services/search-services/5
+
+{
+    "valor":"11111",
+    "descripcion":"domi"
+}
+
+
+CIUDAD
+
+GET - http://localhost:3006/api/v1/city/get-city
+
+POST - http://localhost:3006/api/v1/city/add-city
+
+PUT - http://localhost:3006/api/v1/city/update-city/00
+
+DEL - http://localhost:3006/api/v1/city/delete-city/1
+
+GET - http://localhost:3006/api/v1/city/search-city/1
+
+{
+    "nombre":"Bogota"
+}

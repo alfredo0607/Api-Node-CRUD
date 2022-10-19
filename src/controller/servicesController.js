@@ -8,9 +8,9 @@ import {
 import { body, validationResult } from "express-validator";
 import { pool } from "../config/db.js";
 
-const routerAdviser = express.Router();
+const routerServices = express.Router();
 
-routerAdviser.get("/get-adviser", async (req, res) => {
+routerServices.get("/get-services", async (req, res) => {
   const resultErrors = validationResult(req).formatWith(errorFormatter);
   if (!resultErrors.isEmpty()) {
     const errorResponse = formatErrorValidator(resultErrors);
@@ -20,13 +20,16 @@ routerAdviser.get("/get-adviser", async (req, res) => {
   const dbConnection = await pool.awaitGetConnection();
 
   try {
-    const response = await dbConnection.awaitQuery(`SELECT * FROM asesor`, []);
+    const response = await dbConnection.awaitQuery(
+      `SELECT * FROM servicios`,
+      []
+    );
 
     if (!response[0]) {
       dbConnection.release();
       return res
         .status(422)
-        .json(formatResponse({}, `No se encontró asesores registrados`));
+        .json(formatResponse({}, `No se encontró servicios registrados`));
     }
 
     dbConnection.release();
@@ -34,7 +37,7 @@ routerAdviser.get("/get-adviser", async (req, res) => {
     return res.status(201).json(
       formatResponse(
         {
-          txt: `Numero de asesores encontrados ${response.length}`,
+          txt: `Numero de servicios encontrados ${response.length}`,
           response,
         },
         ""
@@ -48,21 +51,13 @@ routerAdviser.get("/get-adviser", async (req, res) => {
   }
 });
 
-routerAdviser.post(
-  "/add-adviser",
+routerServices.post(
+  "/add-services",
   [
-    body("name").notEmpty().withMessage("El nombre es un campo obligatorio"),
-    body("surname")
+    body("descripcion")
       .notEmpty()
-      .withMessage("El apellido es un campo obligatorio"),
-    body("address")
-      .notEmpty()
-      .withMessage("La direccion es un campo obligatorio"),
-    body("phone")
-      .notEmpty()
-      .withMessage("El numero de celular es un campo obligatorio"),
-    body("email").isEmail().withMessage("Por favor ingrese un correo valido"),
-    body("salary").isNumeric().withMessage("Por favor ingrese un valor valido"),
+      .withMessage("La descripcion es un campo obligatorio"),
+    body("valor").notEmpty().withMessage("El valor es un campo obligatorio"),
   ],
   async (req, res) => {
     const resultErrors = validationResult(req).formatWith(errorFormatter);
@@ -74,11 +69,11 @@ routerAdviser.post(
     const dbConnection = await pool.awaitGetConnection();
 
     try {
-      const { name, surname, address, phone, email, salary } = req.body;
+      const { descripcion, valor } = req.body;
 
       await dbConnection.awaitQuery(
-        `INSERT INTO asesor (nombres, apellidos, direccion, telefono, correo, salario) VALUES (?, ?, ?, ?, ?, ?)`,
-        [name, surname, address, phone, email, salary]
+        `INSERT INTO servicios (descripcion, valor) VALUES (?, ?)`,
+        [descripcion, valor]
       );
 
       dbConnection.release();
@@ -86,12 +81,13 @@ routerAdviser.post(
       return res.status(201).json(
         formatResponse(
           {
-            message: "Asesor registrado con exito",
+            message: "servicios registrado con exito",
           },
           ""
         )
       );
     } catch (error) {
+      console.log(error);
       dbConnection.release();
       console.log(error);
       const errorFormated = formatErrorResponse(error);
@@ -100,21 +96,13 @@ routerAdviser.post(
   }
 );
 
-routerAdviser.put(
-  "/update-adviser/:id",
+routerServices.put(
+  "/update-services/:id",
   [
-    body("name").notEmpty().withMessage("El nombre es un campo obligatorio"),
-    body("surname")
+    body("descripcion")
       .notEmpty()
-      .withMessage("El apellido es un campo obligatorio"),
-    body("address")
-      .notEmpty()
-      .withMessage("La direccion es un campo obligatorio"),
-    body("phone")
-      .notEmpty()
-      .withMessage("El numero de celular es un campo obligatorio"),
-    body("email").isEmail().withMessage("Por favor ingrese un correo valido"),
-    body("salary").isNumeric().withMessage("Por favor ingrese un valor valido"),
+      .withMessage("La descripcion es un campo obligatorio"),
+    body("valor").notEmpty().withMessage("El valor es un campo obligatorio"),
   ],
   async (req, res) => {
     const resultErrors = validationResult(req).formatWith(errorFormatter);
@@ -126,29 +114,29 @@ routerAdviser.put(
     const dbConnection = await pool.awaitGetConnection();
 
     try {
-      const { name, surname, address, phone, email, salary } = req.body;
+      const { descripcion, valor } = req.body;
       const { id } = req.params;
 
-      const existAsesor = await dbConnection.awaitQuery(
-        `SELECT * FROM asesor WHERE id= ? `,
+      const existServices = await dbConnection.awaitQuery(
+        `SELECT * FROM servicios WHERE id= ? `,
         [id]
       );
 
-      if (!existAsesor[0]) {
+      if (!existServices[0]) {
         dbConnection.release();
         return res
           .status(422)
           .json(
             formatResponse(
               {},
-              `No se encontró asesor registrado con el ID : ${id}`
+              `No se encontró un servicio registrado con el ID : ${id}`
             )
           );
       }
 
       await dbConnection.awaitQuery(
-        `UPDATE asesor SET nombres= ?, apellidos= ?, direccion= ?, telefono= ?, correo= ?, salario= ?  WHERE id= ?`,
-        [name, surname, address, phone, email, salary, id]
+        `UPDATE servicios SET descripcion= ?, valor= ? WHERE id= ?`,
+        [descripcion, valor, id]
       );
 
       dbConnection.release();
@@ -156,12 +144,13 @@ routerAdviser.put(
       return res.status(201).json(
         formatResponse(
           {
-            message: "Asesor actualizado con exito",
+            message: "Servicio actualizado con exito",
           },
           ""
         )
       );
     } catch (error) {
+      console.log(error);
       dbConnection.release();
       console.log(error);
       const errorFormated = formatErrorResponse(error);
@@ -170,7 +159,7 @@ routerAdviser.put(
   }
 );
 
-routerAdviser.get("/search-adviser/:id", async (req, res) => {
+routerServices.delete("/delete-services/:id", async (req, res) => {
   const resultErrors = validationResult(req).formatWith(errorFormatter);
   if (!resultErrors.isEmpty()) {
     const errorResponse = formatErrorValidator(resultErrors);
@@ -182,72 +171,25 @@ routerAdviser.get("/search-adviser/:id", async (req, res) => {
   try {
     const { id } = req.params;
 
-    const existAsesor = await dbConnection.awaitQuery(
-      `SELECT * FROM asesor WHERE id= ? `,
+    const existServices = await dbConnection.awaitQuery(
+      `SELECT * FROM servicios WHERE id= ? `,
       [id]
     );
 
-    if (!existAsesor[0]) {
+    if (!existServices[0]) {
       dbConnection.release();
       return res
         .status(422)
         .json(
           formatResponse(
             {},
-            `No se encontró Asesor registrado con el ID : ${id}`
-          )
-        );
-    }
-
-    dbConnection.release();
-
-    return res.status(201).json(
-      formatResponse(
-        {
-          existAsesor,
-        },
-        ""
-      )
-    );
-  } catch (error) {
-    dbConnection.release();
-    console.log(error);
-    const errorFormated = formatErrorResponse(error);
-    return res.status(500).json(errorFormated);
-  }
-});
-
-routerAdviser.delete("/delete-adviser/:id", async (req, res) => {
-  const resultErrors = validationResult(req).formatWith(errorFormatter);
-  if (!resultErrors.isEmpty()) {
-    const errorResponse = formatErrorValidator(resultErrors);
-    return res.status(422).json(formatResponse({}, errorResponse));
-  }
-
-  const dbConnection = await pool.awaitGetConnection();
-
-  try {
-    const { id } = req.params;
-
-    const existAsesor = await dbConnection.awaitQuery(
-      `SELECT * FROM asesor WHERE id= ? `,
-      [id]
-    );
-
-    if (!existAsesor[0]) {
-      dbConnection.release();
-      return res
-        .status(422)
-        .json(
-          formatResponse(
-            {},
-            `No se encontró Asesor registrado con el ID : ${id}`
+            `No se encontró Services registrado con el ID : ${id}`
           )
         );
     }
 
     const existRelations = await dbConnection.awaitQuery(
-      `SELECT * FROM factura WHERE asesor_id= ? `,
+      `SELECT * FROM detalle WHERE servicios_id= ? `,
       [id]
     );
 
@@ -258,19 +200,19 @@ routerAdviser.delete("/delete-adviser/:id", async (req, res) => {
         .json(
           formatResponse(
             {},
-            `El asesor  registrado con el ID : ${id} no se puede eliminar ya que esta relacionado con la tabla factura`
+            `Services registrado con el ID : ${id} no se puede eliminar ya que esta relacionado con la tabla detalle`
           )
         );
     }
 
-    await dbConnection.awaitQuery(`DELETE FROM asesor WHERE id= ?`, [id]);
+    await dbConnection.awaitQuery(`DELETE FROM servicios WHERE id= ?`, [id]);
 
     dbConnection.release();
 
     return res.status(201).json(
       formatResponse(
         {
-          message: "Asesor eliminado con exito",
+          message: "Servicio eliminado con exito",
         },
         ""
       )
@@ -283,4 +225,51 @@ routerAdviser.delete("/delete-adviser/:id", async (req, res) => {
   }
 });
 
-export default routerAdviser;
+routerServices.get("/search-services/:id", async (req, res) => {
+  const resultErrors = validationResult(req).formatWith(errorFormatter);
+  if (!resultErrors.isEmpty()) {
+    const errorResponse = formatErrorValidator(resultErrors);
+    return res.status(422).json(formatResponse({}, errorResponse));
+  }
+
+  const dbConnection = await pool.awaitGetConnection();
+
+  try {
+    const { id } = req.params;
+
+    const existServices = await dbConnection.awaitQuery(
+      `SELECT * FROM servicios WHERE id= ? `,
+      [id]
+    );
+
+    if (!existServices[0]) {
+      dbConnection.release();
+      return res
+        .status(422)
+        .json(
+          formatResponse(
+            {},
+            `No se encontró Services registrado con el ID : ${id}`
+          )
+        );
+    }
+
+    dbConnection.release();
+
+    return res.status(201).json(
+      formatResponse(
+        {
+          existServices,
+        },
+        ""
+      )
+    );
+  } catch (error) {
+    dbConnection.release();
+    console.log(error);
+    const errorFormated = formatErrorResponse(error);
+    return res.status(500).json(errorFormated);
+  }
+});
+
+export default routerServices;

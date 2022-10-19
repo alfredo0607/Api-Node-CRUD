@@ -178,7 +178,7 @@ routerClients.delete("/delete-clients/:id", async (req, res) => {
   const dbConnection = await pool.awaitGetConnection();
 
   try {
-    const { name, surname, address, phone, email } = req.body;
+   
     const { id } = req.params;
 
     const existClients = await dbConnection.awaitQuery(
@@ -194,6 +194,25 @@ routerClients.delete("/delete-clients/:id", async (req, res) => {
           formatResponse(
             {},
             `No se encontró cliente registrado con el ID : ${id}`
+          )
+        );
+    }
+
+    const existRelations = await dbConnection.awaitQuery(
+      `SELECT * FROM factura WHERE cliente_id= ? `,
+      [id]
+    );
+
+
+    
+  if (existRelations[0]) {
+      dbConnection.release();
+      return res
+        .status(422)
+        .json(
+          formatResponse(
+            {},
+            `El cliente  registrado con el ID : ${id} no se puede eliminar ya que esta relacionado con la tabla factura`
           )
         );
     }

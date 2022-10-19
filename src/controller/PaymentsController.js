@@ -8,9 +8,9 @@ import {
 import { body, validationResult } from "express-validator";
 import { pool } from "../config/db.js";
 
-const routerAdviser = express.Router();
+const routerPayments = express.Router();
 
-routerAdviser.get("/get-adviser", async (req, res) => {
+routerPayments.get("/get-payments", async (req, res) => {
   const resultErrors = validationResult(req).formatWith(errorFormatter);
   if (!resultErrors.isEmpty()) {
     const errorResponse = formatErrorValidator(resultErrors);
@@ -20,13 +20,13 @@ routerAdviser.get("/get-adviser", async (req, res) => {
   const dbConnection = await pool.awaitGetConnection();
 
   try {
-    const response = await dbConnection.awaitQuery(`SELECT * FROM asesor`, []);
+    const response = await dbConnection.awaitQuery(`SELECT * FROM pagos`, []);
 
     if (!response[0]) {
       dbConnection.release();
       return res
         .status(422)
-        .json(formatResponse({}, `No se encontró asesores registrados`));
+        .json(formatResponse({}, `No se encontró pagos registrados`));
     }
 
     dbConnection.release();
@@ -34,7 +34,7 @@ routerAdviser.get("/get-adviser", async (req, res) => {
     return res.status(201).json(
       formatResponse(
         {
-          txt: `Numero de asesores encontrados ${response.length}`,
+          txt: `Numero de pagos encontrados ${response.length}`,
           response,
         },
         ""
@@ -48,21 +48,15 @@ routerAdviser.get("/get-adviser", async (req, res) => {
   }
 });
 
-routerAdviser.post(
-  "/add-adviser",
+routerPayments.post(
+  "/add-payments",
   [
-    body("name").notEmpty().withMessage("El nombre es un campo obligatorio"),
-    body("surname")
+    body("fecha").notEmpty().withMessage("La fecha es un campo obligatorio"),
+    body("valor").notEmpty().withMessage("El valor es un campo obligatorio"),
+    body("tipo").notEmpty().withMessage("El tipo es un campo obligatorio"),
+    body("factura_id")
       .notEmpty()
-      .withMessage("El apellido es un campo obligatorio"),
-    body("address")
-      .notEmpty()
-      .withMessage("La direccion es un campo obligatorio"),
-    body("phone")
-      .notEmpty()
-      .withMessage("El numero de celular es un campo obligatorio"),
-    body("email").isEmail().withMessage("Por favor ingrese un correo valido"),
-    body("salary").isNumeric().withMessage("Por favor ingrese un valor valido"),
+      .withMessage("La factura_id es un campo obligatorio"),
   ],
   async (req, res) => {
     const resultErrors = validationResult(req).formatWith(errorFormatter);
@@ -74,11 +68,11 @@ routerAdviser.post(
     const dbConnection = await pool.awaitGetConnection();
 
     try {
-      const { name, surname, address, phone, email, salary } = req.body;
+      const { fecha, valor, tipo, observacion, factura_id } = req.body;
 
       await dbConnection.awaitQuery(
-        `INSERT INTO asesor (nombres, apellidos, direccion, telefono, correo, salario) VALUES (?, ?, ?, ?, ?, ?)`,
-        [name, surname, address, phone, email, salary]
+        `INSERT INTO pagos (fecha, valor, tipo, observacion, factura_id ) VALUES (?, ?, ?, ?, ?)`,
+        [fecha, valor, tipo, observacion, factura_id]
       );
 
       dbConnection.release();
@@ -86,12 +80,13 @@ routerAdviser.post(
       return res.status(201).json(
         formatResponse(
           {
-            message: "Asesor registrado con exito",
+            message: "Pagos registrado con exito",
           },
           ""
         )
       );
     } catch (error) {
+      console.log(error);
       dbConnection.release();
       console.log(error);
       const errorFormated = formatErrorResponse(error);
@@ -100,21 +95,15 @@ routerAdviser.post(
   }
 );
 
-routerAdviser.put(
-  "/update-adviser/:id",
+routerPayments.put(
+  "/update-payments/:id",
   [
-    body("name").notEmpty().withMessage("El nombre es un campo obligatorio"),
-    body("surname")
+    body("fecha").notEmpty().withMessage("La fecha es un campo obligatorio"),
+    body("valor").notEmpty().withMessage("El valor es un campo obligatorio"),
+    body("tipo").notEmpty().withMessage("El tipo es un campo obligatorio"),
+    body("factura_id")
       .notEmpty()
-      .withMessage("El apellido es un campo obligatorio"),
-    body("address")
-      .notEmpty()
-      .withMessage("La direccion es un campo obligatorio"),
-    body("phone")
-      .notEmpty()
-      .withMessage("El numero de celular es un campo obligatorio"),
-    body("email").isEmail().withMessage("Por favor ingrese un correo valido"),
-    body("salary").isNumeric().withMessage("Por favor ingrese un valor valido"),
+      .withMessage("La factura_id es un campo obligatorio"),
   ],
   async (req, res) => {
     const resultErrors = validationResult(req).formatWith(errorFormatter);
@@ -126,29 +115,29 @@ routerAdviser.put(
     const dbConnection = await pool.awaitGetConnection();
 
     try {
-      const { name, surname, address, phone, email, salary } = req.body;
+      const { fecha, valor, tipo, observacion, factura_id } = req.body;
       const { id } = req.params;
 
-      const existAsesor = await dbConnection.awaitQuery(
-        `SELECT * FROM asesor WHERE id= ? `,
+      const existPagos = await dbConnection.awaitQuery(
+        `SELECT * FROM pagos WHERE id= ? `,
         [id]
       );
 
-      if (!existAsesor[0]) {
+      if (!existPagos[0]) {
         dbConnection.release();
         return res
           .status(422)
           .json(
             formatResponse(
               {},
-              `No se encontró asesor registrado con el ID : ${id}`
+              `No se encontró un pago registrado con el ID : ${id}`
             )
           );
       }
 
       await dbConnection.awaitQuery(
-        `UPDATE asesor SET nombres= ?, apellidos= ?, direccion= ?, telefono= ?, correo= ?, salario= ?  WHERE id= ?`,
-        [name, surname, address, phone, email, salary, id]
+        `UPDATE pagos SET fecha= ?, valor= ?, tipo= ?, observacion= ?, factura_id= ? WHERE id= ?`,
+        [fecha, valor, tipo, observacion, factura_id, id]
       );
 
       dbConnection.release();
@@ -156,12 +145,13 @@ routerAdviser.put(
       return res.status(201).json(
         formatResponse(
           {
-            message: "Asesor actualizado con exito",
+            message: "Pago actualizado con exito",
           },
           ""
         )
       );
     } catch (error) {
+      console.log(error);
       dbConnection.release();
       console.log(error);
       const errorFormated = formatErrorResponse(error);
@@ -170,7 +160,7 @@ routerAdviser.put(
   }
 );
 
-routerAdviser.get("/search-adviser/:id", async (req, res) => {
+routerPayments.delete("/delete-payments/:id", async (req, res) => {
   const resultErrors = validationResult(req).formatWith(errorFormatter);
   if (!resultErrors.isEmpty()) {
     const errorResponse = formatErrorValidator(resultErrors);
@@ -182,29 +172,28 @@ routerAdviser.get("/search-adviser/:id", async (req, res) => {
   try {
     const { id } = req.params;
 
-    const existAsesor = await dbConnection.awaitQuery(
-      `SELECT * FROM asesor WHERE id= ? `,
+    const existPagos = await dbConnection.awaitQuery(
+      `SELECT * FROM pagos WHERE id= ? `,
       [id]
     );
 
-    if (!existAsesor[0]) {
+    if (!existPagos[0]) {
       dbConnection.release();
       return res
         .status(422)
         .json(
-          formatResponse(
-            {},
-            `No se encontró Asesor registrado con el ID : ${id}`
-          )
+          formatResponse({}, `No se encontró Pago registrado con el ID : ${id}`)
         );
     }
+
+    await dbConnection.awaitQuery(`DELETE FROM pagos WHERE id= ?`, [id]);
 
     dbConnection.release();
 
     return res.status(201).json(
       formatResponse(
         {
-          existAsesor,
+          message: "Pago eliminado con exito",
         },
         ""
       )
@@ -217,7 +206,7 @@ routerAdviser.get("/search-adviser/:id", async (req, res) => {
   }
 });
 
-routerAdviser.delete("/delete-adviser/:id", async (req, res) => {
+routerPayments.get("/search-payments/:id", async (req, res) => {
   const resultErrors = validationResult(req).formatWith(errorFormatter);
   if (!resultErrors.isEmpty()) {
     const errorResponse = formatErrorValidator(resultErrors);
@@ -229,48 +218,26 @@ routerAdviser.delete("/delete-adviser/:id", async (req, res) => {
   try {
     const { id } = req.params;
 
-    const existAsesor = await dbConnection.awaitQuery(
-      `SELECT * FROM asesor WHERE id= ? `,
+    const existPagos = await dbConnection.awaitQuery(
+      `SELECT * FROM pagos WHERE id= ? `,
       [id]
     );
 
-    if (!existAsesor[0]) {
+    if (!existPagos[0]) {
       dbConnection.release();
       return res
         .status(422)
         .json(
-          formatResponse(
-            {},
-            `No se encontró Asesor registrado con el ID : ${id}`
-          )
+          formatResponse({}, `No se encontró Pago registrado con el ID : ${id}`)
         );
     }
-
-    const existRelations = await dbConnection.awaitQuery(
-      `SELECT * FROM factura WHERE asesor_id= ? `,
-      [id]
-    );
-
-    if (existRelations[0]) {
-      dbConnection.release();
-      return res
-        .status(422)
-        .json(
-          formatResponse(
-            {},
-            `El asesor  registrado con el ID : ${id} no se puede eliminar ya que esta relacionado con la tabla factura`
-          )
-        );
-    }
-
-    await dbConnection.awaitQuery(`DELETE FROM asesor WHERE id= ?`, [id]);
 
     dbConnection.release();
 
     return res.status(201).json(
       formatResponse(
         {
-          message: "Asesor eliminado con exito",
+          existPagos,
         },
         ""
       )
@@ -283,4 +250,4 @@ routerAdviser.delete("/delete-adviser/:id", async (req, res) => {
   }
 });
 
-export default routerAdviser;
+export default routerPayments;

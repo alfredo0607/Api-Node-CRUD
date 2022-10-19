@@ -8,9 +8,9 @@ import {
 import { body, validationResult } from "express-validator";
 import { pool } from "../config/db.js";
 
-const routerAdviser = express.Router();
+const routerPlans = express.Router();
 
-routerAdviser.get("/get-adviser", async (req, res) => {
+routerPlans.get("/get-plans", async (req, res) => {
   const resultErrors = validationResult(req).formatWith(errorFormatter);
   if (!resultErrors.isEmpty()) {
     const errorResponse = formatErrorValidator(resultErrors);
@@ -20,13 +20,13 @@ routerAdviser.get("/get-adviser", async (req, res) => {
   const dbConnection = await pool.awaitGetConnection();
 
   try {
-    const response = await dbConnection.awaitQuery(`SELECT * FROM asesor`, []);
+    const response = await dbConnection.awaitQuery(`SELECT * FROM planes`, []);
 
     if (!response[0]) {
       dbConnection.release();
       return res
         .status(422)
-        .json(formatResponse({}, `No se encontró asesores registrados`));
+        .json(formatResponse({}, `No se encontró planes registrados`));
     }
 
     dbConnection.release();
@@ -34,7 +34,7 @@ routerAdviser.get("/get-adviser", async (req, res) => {
     return res.status(201).json(
       formatResponse(
         {
-          txt: `Numero de asesores encontrados ${response.length}`,
+          txt: `Numero de planes encontrados ${response.length}`,
           response,
         },
         ""
@@ -48,21 +48,22 @@ routerAdviser.get("/get-adviser", async (req, res) => {
   }
 });
 
-routerAdviser.post(
-  "/add-adviser",
+routerPlans.post(
+  "/add-plans",
   [
-    body("name").notEmpty().withMessage("El nombre es un campo obligatorio"),
-    body("surname")
+    body("nombre").notEmpty().withMessage("El nombre es un campo obligatorio"),
+    body("descripcion")
       .notEmpty()
-      .withMessage("El apellido es un campo obligatorio"),
-    body("address")
+      .withMessage("La descripcion es un campo obligatorio"),
+    body("fechainicio")
       .notEmpty()
-      .withMessage("La direccion es un campo obligatorio"),
-    body("phone")
+      .withMessage("La fecha de inicio es un campo obligatorio"),
+    body("fechafinal")
       .notEmpty()
-      .withMessage("El numero de celular es un campo obligatorio"),
-    body("email").isEmail().withMessage("Por favor ingrese un correo valido"),
-    body("salary").isNumeric().withMessage("Por favor ingrese un valor valido"),
+      .withMessage("La fecha final es un campo obligatorio"),
+    body("precio")
+      .notEmpty()
+      .withMessage("La fecha final es un campo obligatorio"),
   ],
   async (req, res) => {
     const resultErrors = validationResult(req).formatWith(errorFormatter);
@@ -74,11 +75,11 @@ routerAdviser.post(
     const dbConnection = await pool.awaitGetConnection();
 
     try {
-      const { name, surname, address, phone, email, salary } = req.body;
+      const { nombre, descripcion, fechainicio, fechafinal, precio } = req.body;
 
       await dbConnection.awaitQuery(
-        `INSERT INTO asesor (nombres, apellidos, direccion, telefono, correo, salario) VALUES (?, ?, ?, ?, ?, ?)`,
-        [name, surname, address, phone, email, salary]
+        `INSERT INTO planes (nombre, descripcion, fechainicio, fechafinal, precio) VALUES (?, ?, ?, ?, ?)`,
+        [nombre, descripcion, fechainicio, fechafinal, precio]
       );
 
       dbConnection.release();
@@ -86,7 +87,7 @@ routerAdviser.post(
       return res.status(201).json(
         formatResponse(
           {
-            message: "Asesor registrado con exito",
+            message: "Plan registrado con exito",
           },
           ""
         )
@@ -100,21 +101,22 @@ routerAdviser.post(
   }
 );
 
-routerAdviser.put(
-  "/update-adviser/:id",
+routerPlans.put(
+  "/update-plans/:id",
   [
-    body("name").notEmpty().withMessage("El nombre es un campo obligatorio"),
-    body("surname")
+    body("nombre").notEmpty().withMessage("El nombre es un campo obligatorio"),
+    body("descripcion")
       .notEmpty()
-      .withMessage("El apellido es un campo obligatorio"),
-    body("address")
+      .withMessage("La descripcion es un campo obligatorio"),
+    body("fechainicio")
       .notEmpty()
-      .withMessage("La direccion es un campo obligatorio"),
-    body("phone")
+      .withMessage("La fecha de inicio es un campo obligatorio"),
+    body("fechafinal")
       .notEmpty()
-      .withMessage("El numero de celular es un campo obligatorio"),
-    body("email").isEmail().withMessage("Por favor ingrese un correo valido"),
-    body("salary").isNumeric().withMessage("Por favor ingrese un valor valido"),
+      .withMessage("La fecha final es un campo obligatorio"),
+    body("precio")
+      .notEmpty()
+      .withMessage("La fecha final es un campo obligatorio"),
   ],
   async (req, res) => {
     const resultErrors = validationResult(req).formatWith(errorFormatter);
@@ -126,29 +128,29 @@ routerAdviser.put(
     const dbConnection = await pool.awaitGetConnection();
 
     try {
-      const { name, surname, address, phone, email, salary } = req.body;
+      const { nombre, descripcion, fechainicio, fechafinal, precio } = req.body;
       const { id } = req.params;
 
-      const existAsesor = await dbConnection.awaitQuery(
-        `SELECT * FROM asesor WHERE id= ? `,
+      const existPlanes = await dbConnection.awaitQuery(
+        `SELECT * FROM planes WHERE id= ? `,
         [id]
       );
 
-      if (!existAsesor[0]) {
+      if (!existPlanes[0]) {
         dbConnection.release();
         return res
           .status(422)
           .json(
             formatResponse(
               {},
-              `No se encontró asesor registrado con el ID : ${id}`
+              `No se encontró plan registrado con el ID : ${id}`
             )
           );
       }
 
       await dbConnection.awaitQuery(
-        `UPDATE asesor SET nombres= ?, apellidos= ?, direccion= ?, telefono= ?, correo= ?, salario= ?  WHERE id= ?`,
-        [name, surname, address, phone, email, salary, id]
+        `UPDATE planes SET nombre= ?, descripcion= ?, fechainicio= ?, fechafinal= ?, precio= ? WHERE id= ?`,
+        [nombre, descripcion, fechainicio, fechafinal, precio, id]
       );
 
       dbConnection.release();
@@ -156,7 +158,7 @@ routerAdviser.put(
       return res.status(201).json(
         formatResponse(
           {
-            message: "Asesor actualizado con exito",
+            message: "Plan actualizado con exito",
           },
           ""
         )
@@ -170,7 +172,7 @@ routerAdviser.put(
   }
 );
 
-routerAdviser.get("/search-adviser/:id", async (req, res) => {
+routerPlans.delete("/delete-plans/:id", async (req, res) => {
   const resultErrors = validationResult(req).formatWith(errorFormatter);
   if (!resultErrors.isEmpty()) {
     const errorResponse = formatErrorValidator(resultErrors);
@@ -183,7 +185,7 @@ routerAdviser.get("/search-adviser/:id", async (req, res) => {
     const { id } = req.params;
 
     const existAsesor = await dbConnection.awaitQuery(
-      `SELECT * FROM asesor WHERE id= ? `,
+      `SELECT * FROM planes WHERE id= ? `,
       [id]
     );
 
@@ -194,8 +196,71 @@ routerAdviser.get("/search-adviser/:id", async (req, res) => {
         .json(
           formatResponse(
             {},
-            `No se encontró Asesor registrado con el ID : ${id}`
+            `No se encontró planes registrado con el ID : ${id}`
           )
+        );
+    }
+
+    const existRelations = await dbConnection.awaitQuery(
+      `SELECT * FROM factura WHERE planes_id= ? `,
+      [id]
+    );
+
+    if (existRelations[0]) {
+      dbConnection.release();
+      return res
+        .status(422)
+        .json(
+          formatResponse(
+            {},
+            `El plan  registrado con el ID : ${id} no se puede eliminar ya que esta relacionado con la tabla factura`
+          )
+        );
+    }
+
+    await dbConnection.awaitQuery(`DELETE FROM planes WHERE id= ?`, [id]);
+
+    dbConnection.release();
+
+    return res.status(201).json(
+      formatResponse(
+        {
+          message: "Plan eliminado con exito",
+        },
+        ""
+      )
+    );
+  } catch (error) {
+    dbConnection.release();
+    console.log(error);
+    const errorFormated = formatErrorResponse(error);
+    return res.status(500).json(errorFormated);
+  }
+});
+
+routerPlans.get("/search-plans/:id", async (req, res) => {
+  const resultErrors = validationResult(req).formatWith(errorFormatter);
+  if (!resultErrors.isEmpty()) {
+    const errorResponse = formatErrorValidator(resultErrors);
+    return res.status(422).json(formatResponse({}, errorResponse));
+  }
+
+  const dbConnection = await pool.awaitGetConnection();
+
+  try {
+    const { id } = req.params;
+
+    const existAsesor = await dbConnection.awaitQuery(
+      `SELECT * FROM planes WHERE id= ? `,
+      [id]
+    );
+
+    if (!existAsesor[0]) {
+      dbConnection.release();
+      return res
+        .status(422)
+        .json(
+          formatResponse({}, `No se encontró plan registrado con el ID : ${id}`)
         );
     }
 
@@ -217,70 +282,4 @@ routerAdviser.get("/search-adviser/:id", async (req, res) => {
   }
 });
 
-routerAdviser.delete("/delete-adviser/:id", async (req, res) => {
-  const resultErrors = validationResult(req).formatWith(errorFormatter);
-  if (!resultErrors.isEmpty()) {
-    const errorResponse = formatErrorValidator(resultErrors);
-    return res.status(422).json(formatResponse({}, errorResponse));
-  }
-
-  const dbConnection = await pool.awaitGetConnection();
-
-  try {
-    const { id } = req.params;
-
-    const existAsesor = await dbConnection.awaitQuery(
-      `SELECT * FROM asesor WHERE id= ? `,
-      [id]
-    );
-
-    if (!existAsesor[0]) {
-      dbConnection.release();
-      return res
-        .status(422)
-        .json(
-          formatResponse(
-            {},
-            `No se encontró Asesor registrado con el ID : ${id}`
-          )
-        );
-    }
-
-    const existRelations = await dbConnection.awaitQuery(
-      `SELECT * FROM factura WHERE asesor_id= ? `,
-      [id]
-    );
-
-    if (existRelations[0]) {
-      dbConnection.release();
-      return res
-        .status(422)
-        .json(
-          formatResponse(
-            {},
-            `El asesor  registrado con el ID : ${id} no se puede eliminar ya que esta relacionado con la tabla factura`
-          )
-        );
-    }
-
-    await dbConnection.awaitQuery(`DELETE FROM asesor WHERE id= ?`, [id]);
-
-    dbConnection.release();
-
-    return res.status(201).json(
-      formatResponse(
-        {
-          message: "Asesor eliminado con exito",
-        },
-        ""
-      )
-    );
-  } catch (error) {
-    dbConnection.release();
-    console.log(error);
-    const errorFormated = formatErrorResponse(error);
-    return res.status(500).json(errorFormated);
-  }
-});
-
-export default routerAdviser;
+export default routerPlans;
